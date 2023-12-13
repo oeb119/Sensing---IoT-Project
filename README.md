@@ -6,6 +6,8 @@ The train ticket prices are grabbed using data scraping via a crawler, and the f
 
 The results are communicated via a Telegram Bot, GroundTravel. Through this bot, the user can take various actions, such as visualising how the prices have evolved over the past few days in a graph, or sending a email to the local MP urging for greener travel if flights are cheaper than planes.
 
+I have removed all personal API access keys (ThingSpeak and Gmail)
+
 Happy reading!
 
 Dec 10, 2023
