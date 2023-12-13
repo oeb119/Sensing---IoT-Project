@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 
 ### Initializing credentials ###
 
-eu_channel = '2363580'
-fl_channel = '2367228'
-eu_api_read = 'I0TX348P2XLD2V55'
-fl_api_read = '5DMSQSY2KYNGH5ZD'
+eu_channel = ''
+fl_channel = ''
+eu_api_read = ''
+fl_api_read = ''
 
 
 ### Function to grab most recent price from ThingSpeak API ###
@@ -74,7 +74,7 @@ def get_prices(channel, field, api):
         field_name = "field{}".format(field)
 
         # Filter out entries where field1 is null
-        df = [entry for entry in df["feeds"] if entry.get(field_name) is not None]
+        df = [entry for entry in df["feeds"] if entry.get(field_name) is not None and entry[field_name] != '[]']
 
         # Remove null values
         # df = df.dropna(subset=['field3'])
