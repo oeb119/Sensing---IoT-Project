@@ -195,7 +195,7 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
 - Activist complain to local MP about expensive flights: type "/email" followed by day of travel (ex. /email 22)""")
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token('6633365284:AAEryJOWdvrXIQNQiWHJKLQKA0B2UVQStPA').build()
+    application = ApplicationBuilder().token('').build()
     
     #associates the user message with the function to respond
     email_handler = CommandHandler('email', email)
