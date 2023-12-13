@@ -1,6 +1,8 @@
 import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -31,7 +33,16 @@ def get_url(origin, destination, date, day):
 
 ## Create web driver instance
 def create_driver():
-    driver = webdriver.Chrome()
+    browser_driver = ChromeService('/usr/lib/chromium-browser/chromedriver')
+    # Configure Chrome options for headless mode
+    options = Options()
+    options.add_argument('--headless')  # Add other options as needed
+    # Set a specific user agent
+    options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3')
+
+    # Set a specific window size
+    options.add_argument('--window-size=1920,1080')
+    driver = webdriver.Chrome(service=browser_driver, options=options)
     return driver
 
 # driver = create_driver()
@@ -123,7 +134,7 @@ def dataframe(csv_name, trains):
     df = pd.DataFrame(data_list, columns=['Time', 'Price', 'Description'])
     
     #Exporting the DataFrame as csv
-    df.to_csv("/Users/louiscutner/desktop/Sensing & IoT/price_data/"+csv_name, index=False, sep=";")
+    df.to_csv("/home/orianebui/Desktop/SIoT/price_data/"+str(csv_name), index=False, sep=";")
     return df
 
 # df = dataframe(csv_name, trains)

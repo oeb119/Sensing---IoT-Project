@@ -26,8 +26,8 @@ def plot_save_name(day, field):
     # plt.fill_between(timestamps, prices_tr, prices_fl, where=(prices_fl < prices_tr), color='gray', alpha=0.3, label='Shaded Region')
 
     plt.xlabel('Timestamp')
-    plt.ylabel('Price')
-    plt.title('Prices Over Time on Dec {}'.format(day))
+    plt.ylabel('Price (£)')
+    plt.title('Prices in £ Over Time on Dec {}'.format(day))
     plt.legend()
     plt.xticks(rotation=45)
     plt.tight_layout()

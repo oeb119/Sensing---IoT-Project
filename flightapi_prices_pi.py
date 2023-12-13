@@ -41,7 +41,7 @@ def get_file_name(day, formatted_time):
 ## Saves flight info in json file
 def save_file(file_name, flights):
     # Write the JSON data to the file
-    with open("/Users/louiscutner/desktop/Sensing & IoT/price_data/"+str(file_name), 'w') as file:
+    with open("/home/orianebui/Desktop/SIoT/price_data/"+str(file_name), 'w') as file:
         file.write(json.dumps(json.loads(flights), indent=2))
 
 # save_file(file_name, flights)
@@ -57,7 +57,7 @@ def get_in_gbp(usd_value):
 
 ## GETTING THE MINIMUM FLIGHT INFO
 def min_flight_price(file_name):
-    with open("/Users/louiscutner/desktop/Sensing & IoT/price_data/"+str(file_name), 'r') as file:
+    with open("/home/orianebui/Desktop/SIoT/price_data/"+str(file_name), 'r') as file:
         data = json.loads(file.read())
 
     # Iterate through fares and find minimum trip id
@@ -91,4 +91,4 @@ def min_flight_price(file_name):
     return [min_price, departure, duration, airline, round(min_price_gbp,1)]
 
 # cheapest_flight = min_flight_price(file_name)
-# print(cheapest_flight[4])
+# print(cheapest_flight[0])

@@ -8,7 +8,9 @@ def bytes_to_mb(size_bytes):
     i = int(math.floor(math.log(size_bytes, 1024)))
     power = math.pow(1024, i)
     size = round(size_bytes / power, 2)
-    return f"{size} Mbps"
+    #In MBPS
+    return f"{size}"
+
 
 def get_internet_speed():
     wifi = speedtest.Speedtest()
