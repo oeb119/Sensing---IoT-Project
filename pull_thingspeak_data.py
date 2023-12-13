@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 
 ### Initializing credentials ###
 
-eu_channel = ''
-fl_channel = ''
-eu_api_read = ''
-fl_api_read = ''
+eu_channel = '2363580'
+fl_channel = '2367228'
+eu_api_read = 'I0TX348P2XLD2V55'
+fl_api_read = '5DMSQSY2KYNGH5ZD'
 
 
 ### Function to grab most recent price from ThingSpeak API ###
